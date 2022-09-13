@@ -23,6 +23,12 @@ sort([]); // []
 
 function sort(nums, sorted = []) {
   // your code here
+  if (nums.length === 0) return sorted; //base
+  let smallest = Math.min(...nums);
+  sorted.push(smallest);
+  let i = nums.indexOf(smallest);
+  nums.splice(i, 1);
+  return sort(nums, sorted)
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

@@ -11,7 +11,14 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
 // your code here
-  
+const flatten = (array) => {
+  if (array.length === 0) return [];
+  if (Array.isArray(array[0])) {
+    return flatten(array[0]).concat(flatten(array.slice(1)));
+  } else return [array[0]].concat(flatten(array.slice(1)));
+}
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = flatten;
