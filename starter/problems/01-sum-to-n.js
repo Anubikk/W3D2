@@ -12,7 +12,12 @@ sumToN(-8)  // returns null
 ***********************************************************************/
 
 // your code here
-testing
+const sumToN = (n) => {
+  if (n < 0) return null // edge case
+  if (n === 0) return 0 // base case
+
+  return n + sumToN(n - 1); // recursive step
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
